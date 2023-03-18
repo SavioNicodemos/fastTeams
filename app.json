@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "powerTeams",
-    "slug": "powerTeams",
+    "name": "fastTeams",
+    "slug": "fastTeams",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
