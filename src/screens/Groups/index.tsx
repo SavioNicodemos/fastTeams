@@ -1,12 +1,15 @@
 import { Header } from '@components/Header';
-import React from 'react';
-
+import { Highlight } from '@components/Highlight';
 import { Container } from './styles'
 
 export const Groups: React.FC = () => {
   return (
     <Container>
       <Header />
+      <Highlight 
+        title="Turmas"
+        subtitle="jogue com a sua turma"
+      />
     </Container>
   );
 }
