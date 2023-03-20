@@ -4,7 +4,7 @@ import { Highlight } from '@components/Highlight';
 import { Input } from '@components/Input';
 import { Container, Content, Icon } from './styles';
 
-export const NewGroup: React.FC = () => {
+export function NewGroup() {
   return (
     <Container>
       <Header showBackButton />

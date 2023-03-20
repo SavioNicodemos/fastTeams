@@ -6,7 +6,7 @@ type Props = {
   showBackButton?: boolean;
 }
 
-export const Header: React.FC<Props> = ({ showBackButton = false }: Props) => {
+export function Header({ showBackButton = false }: Props){
   return (
     <Container>
       {showBackButton &&
