@@ -10,10 +10,12 @@ import { Input } from "@components/Input";
 import { Container, Form } from "./styles";
 import { HeaderList, NumbersOfPlayers } from '@components/Filter/styles';
 import { PlayerCard } from '@components/PlayerCard';
+import { ListEmpty } from '@components/ListEmpty';
+import { Button } from '@components/Button';
 
 export function Players() {
   const [team, setTeam] = useState('Time A');
-  const [players, setPlayers] = useState(['Sávio', 'Rachel']);
+  const [players, setPlayers] = useState([]);
 
   return (
     <Container>
@@ -60,6 +62,19 @@ export function Players() {
             onRemove={() => { }}
           />
         )}
+        ListEmptyComponent={() => (
+          <ListEmpty message="Não há pessoas nesse time." />
+        )}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          { paddingBottom: 100 },
+          players.length === 0 && { flex: 1 }
+        ]}
+      />
+
+      <Button
+        title='Remover Turma'
+        type='SECONDARY'
       />
 
     </Container>
