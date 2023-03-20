@@ -9,10 +9,12 @@ import { Input } from "@components/Input";
 
 import { Container, Form } from "./styles";
 import { HeaderList, NumbersOfPlayers } from '@components/Filter/styles';
+import { PlayerCard } from '@components/PlayerCard';
 
 export function Players() {
   const [team, setTeam] = useState('Time A');
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(['Sávio', 'Rachel']);
+
   return (
     <Container>
       <Header showBackButton />
@@ -48,6 +50,17 @@ export function Players() {
           {players.length}
         </NumbersOfPlayers>
       </HeaderList>
+
+      <FlatList
+        data={players}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <PlayerCard
+            name={item}
+            onRemove={() => { }}
+          />
+        )}
+      />
 
     </Container>
   )
