@@ -12,7 +12,7 @@ export async function playerAddByGroup(
 ) {
   try {
     if(newPlayer.name.trim().length === 0){
-      throw new AppError('Informe o nome da pessoa para adicionar.');
+      throw new AppError('Type a person name to add a new');
     }
 
     const storedPlayers = await playersGetByGroup(group);
@@ -22,7 +22,7 @@ export async function playerAddByGroup(
     );
 
     if (playerAlreadyExists.length > 0) {
-      throw new AppError('Essa pessoa já está adicionada aqui!');
+      throw new AppError('There is already a person wwith this name here!');
     }
 
     const storage = JSON.stringify([...storedPlayers, newPlayer]);

@@ -6,7 +6,7 @@ import { groupsGetAll } from "./groupsGetAll";
 export async function groupCreate(newGroupName: string) {
   try{
     if(newGroupName.trim().length === 0){
-      throw new AppError('Adicione um nome para a turma.');
+      throw new AppError('Add a name to the group.');
     }
 
     const storedGroups = await groupsGetAll();
@@ -14,7 +14,7 @@ export async function groupCreate(newGroupName: string) {
     const groupAlreadyExists = storedGroups.includes(newGroupName);
 
     if(groupAlreadyExists){
-      throw new AppError('Já existe um grupo cadastrado com esse nome.');
+      throw new AppError('There is already a group registered with this name');
     }
 
     const storage = JSON.stringify([...storedGroups, newGroupName]);

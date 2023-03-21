@@ -29,7 +29,7 @@ export function Groups() {
       setGroups(data);
     } catch (error) {
       console.error(error)
-      Alert.alert('Turmas', 'Não foi possível carregar as turmas');
+      Alert.alert('Groups', 'Could not load the groups');
     } finally {
       setIsLoading(false);
     }
@@ -47,8 +47,8 @@ export function Groups() {
     <Container>
       <Header />
       <Highlight
-        title="Turmas"
-        subtitle="jogue com a sua turma"
+        title="Groups"
+        subtitle="play with your group"
       />
       {
         isLoading ? <Loading /> :
@@ -63,12 +63,12 @@ export function Groups() {
             )}
             contentContainerStyle={groups.length === 0 && { flex: 1 }}
             ListEmptyComponent={() => (
-              <ListEmpty message="Que tal cadastrar a primeira turma?" />
+              <ListEmpty message="How about registering the first group?" />
             )}
           />
       }
       <Button
-        title='Criar nova turma'
+        title='Create new group'
         onPress={handleGoToNewGroup}
       />
     </Container>
